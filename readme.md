@@ -28,6 +28,12 @@ Add the package to your project’s `composer.json` file. Visit [getcomposer.org
 
 ```json
 {
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/deadlyhifi/woocomm-nested-layered-nav"
+      }
+    ],
     "require": {
         "deadlyhifi/woocomm-nested-layered-nav": "1.*"
     }
@@ -44,7 +50,7 @@ include_once('WidgetNestedLayeredNav.php');
 
 ### Register the Widget
 
-Please the following in your `functions.php` to register the widget. It will then show up in your available widgets (`Appearance > Widgets`).
+Place the following in your `functions.php` to replace the default WooCommerce Layered Nav widget with this one.
 
 ```php
 function widget_nested_layered_nav() {
@@ -71,4 +77,5 @@ Use this CSS to stop that from happening.
 
 ### Changelog
 
+* 1.1 – Hide empty attributes, improve documentation.
 * 1.0 – First version.
