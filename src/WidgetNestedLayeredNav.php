@@ -129,7 +129,7 @@ class WidgetNestedLayeredNav extends WC_Widget_Layered_Nav
             foreach ($filters as $filter) {
                 echo $filter['parent'];
 
-                if (! empty($filter['children'])) {
+                if (! empty(array_filter($filter['children']))) {
                     echo '<ul>';
                     foreach ($filter['children'] as $child) {
                         echo $child . '</li>';
@@ -279,14 +279,18 @@ class WidgetNestedLayeredNav extends WC_Widget_Layered_Nav
             $link = add_query_arg('query_type_' . sanitize_title($this->instance['attribute']), 'or', $link);
         }
 
+        if ($count == 0) {
+            return;
+        }
+
         $r = '';
         $r .= '<li' . $class . '>';
 
-        $r .= ($count > 0 || $option_is_set) ? '<a href="' . esc_url(apply_filters('woocommerce_layered_nav_link', $link)) . '">' : '<span>';
+        $r .= ($count > 0 || $option_is_set) ? '<a href="' . esc_url(apply_filters('woocommerce_layered_nav_link', $link)) . '">' : '';
 
         $r .= $term->name;
 
-        $r .= ($count > 0 || $option_is_set) ? '</a>' : '</span>';
+        $r .= ($count > 0 || $option_is_set) ? '</a>' : '';
 
         $r .= ' <span class="count">(' . $count . ')</span>';
 
