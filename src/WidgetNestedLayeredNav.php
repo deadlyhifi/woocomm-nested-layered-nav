@@ -129,7 +129,7 @@ class WidgetNestedLayeredNav extends WC_Widget_Layered_Nav
             foreach ($filters as $filter) {
                 echo $filter['parent'];
 
-                if (! empty(array_filter($filter['children']))) {
+                if (isset($filter['children']) && ! empty(array_filter($filter['children']))) {
                     echo '<ul>';
                     foreach ($filter['children'] as $child) {
                         echo $child . '</li>';
