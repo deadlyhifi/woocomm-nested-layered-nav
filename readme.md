@@ -35,7 +35,7 @@ Add the package to your project’s `composer.json` file. Visit [getcomposer.org
       }
     ],
     "require": {
-        "deadlyhifi/woocomm-nested-layered-nav": "1.*"
+        "deadlyhifi/woocomm-nested-layered-nav": "^2.0"
     }
 }
 ```
@@ -77,5 +77,6 @@ Use this CSS to stop that from happening.
 
 ### Changelog
 
+* 2.0 - Update and simplify to work with WooCommerce 2.6.0+.
 * 1.1 – Hide empty attributes, improve documentation.
 * 1.0 – First version.
